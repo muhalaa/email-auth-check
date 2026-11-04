@@ -1,0 +1,55 @@
+{
+  "name": "email-auth-check",
+  "version": "0.1.0",
+  "description": "Check a domain's MX, SPF, DMARC and DKIM from public DNS, count SPF lookups and build DMARC records. The engine behind the free tools at roimaxi.com.",
+  "keywords": [
+    "spf",
+    "dmarc",
+    "dkim",
+    "mx",
+    "email",
+    "dns",
+    "deliverability",
+    "email-authentication",
+    "spf-lookup-counter",
+    "dmarc-generator"
+  ],
+  "license": "MIT",
+  "author": "M Ventures LTD (ROI Maximizer)",
+  "homepage": "https://roimaxi.com/tools/email-setup-checker",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/muhalaa/email-auth-check"
+  },
+  "bugs": {
+    "url": "https://github.com/muhalaa/email-auth-check/issues"
+  },
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "bin": {
+    "email-auth-check": "./dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node --test test/*.test.mjs",
+    "prepublishOnly": "npm test"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.0"
+  }
+}
